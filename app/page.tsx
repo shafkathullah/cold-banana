@@ -43,6 +43,13 @@ const Header = () => (
 
 const Hero = () => (
   <section className="h-[700px] flex justify-center items-center">
+    <Image
+      src={heroBg}
+      alt="Hero Background"
+      width={1920}
+      height={1080}
+      className="absolute -top-[200px] z-[-1] overflow-visible"
+    />
     <div className="md:w-5/12">
       <h2 className="text-[64px] leading-[96px] font-bold text-[#212121]">
         LOREM IPSUM
@@ -189,13 +196,6 @@ export default async function Component() {
   console.log({ products });
   return (
     <div>
-      <Image
-        src={heroBg}
-        alt="Hero Background"
-        width={1920}
-        height={1080}
-        className="absolute -top-[180px] left-0 right-0 h-full object-cover z-[-1] mx-auto overflow-visible"
-      />
       <Header />
       <main>
         <Hero />
