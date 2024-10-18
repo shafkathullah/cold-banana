@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import heroBg from "./hero_bg.svg";
+import vase from "./vase.png";
 
 const Header = () => (
   <header className="flex justify-between pt-[42px] items-center mx-auto max-w-6xl">
@@ -40,8 +41,8 @@ const Header = () => (
 );
 
 const Hero = () => (
-  <section className="h-[800px] flex justify-center items-center">
-    <div className="pr-40">
+  <section className="h-[700px] flex justify-center items-center">
+    <div className="md:w-5/12">
       <h2 className="text-[64px] leading-[96px] font-bold text-[#212121]">
         LOREM IPSUM
         <br />
@@ -55,27 +56,26 @@ const Hero = () => (
 );
 
 const Feature = () => (
-  <section className="flex flex-col md:flex-row items-center justify-between py-20 px-4">
-    <div className="md:w-1/2 mb-10 md:mb-0">
-      <h2 className="text-3xl font-bold mb-4">LOREM IPSUM DOLOR SIT AMET.</h2>
-      <p className="mb-6">
+  <section className="flex flex-col gap-10  md:flex-row items-center justify-between max-w-6xl mx-auto">
+    <div className="md:w-7/12">
+      <h2 className="font-poppins mb-[38px] text-4xl font-bold leading-[54px] text-left">
+        LOREM IPSUM DOLOR SIT AMET.
+      </h2>
+      <p className="font-poppins text-2xl font-normal leading-9 text-left mb-12">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
         dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
         consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
         adipiscing elit.
       </p>
-      <button className="bg-gradient-to-r from-green-400 to-blue-500 text-white">
+      <button className="bg-gradient-to-r from-[#5B68DF] to-[#73E0A9] text-white w-[175px] h-[40px] rounded-full hover:opacity-90 transition duration-300 text-[16px] leading-[24px] font-semibold">
         Read More
       </button>
     </div>
-    <div className="md:w-1/2 relative">
-      <div className="w-64 h-64 bg-gradient-to-br from-blue-400 to-green-400 rounded-full absolute -z-10"></div>
+    <div className="md:w-5/12 relative">
       <Image
-        src="/placeholder.svg"
+        src={vase}
         alt="Plant"
-        width={300}
-        height={300}
-        className="relative z-10"
+        className="relative z-10 w-full h-full scale-125"
       />
     </div>
   </section>
@@ -255,7 +255,7 @@ export default function Component() {
         alt="Hero Background"
         width={1920}
         height={1080}
-        className="absolute -top-[150px] left-0 h-full object-cover z-[-1]"
+        className="absolute -top-[180px] left-0 right-0 h-full object-cover z-[-1] mx-auto overflow-visible"
       />
       <Header />
       <main>
