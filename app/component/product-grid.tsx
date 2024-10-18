@@ -20,17 +20,21 @@ const ProductCard = ({
   title: string;
   price: string;
 }) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+  <div className="bg-white rounded-[24px] overflow-hidden shadow-lg">
     <Image
       src={image}
       alt={title}
       width={300}
       height={300}
-      className="w-full object-cover aspect-square"
+      className="object-cover w-[369px] h-[314px] rounded-[24px] shadow-lg"
     />
     <div className="p-4">
-      <h3 className="font-bold mb-2">{title}</h3>
-      <p className="text-gray-600">{price}</p>
+      <h3 className="font-bold text-[24px] leading-[36px] uppercase mb-2 text-[#212121]">
+        {title}
+      </h3>
+      <p className="text-[#747474] font-bold text-[24px] leading-[36px]">
+        {price}
+      </p>
     </div>
   </div>
 );
@@ -54,14 +58,16 @@ const ProductGrid = ({ products }: { products: IProduct[] }) => {
           />
         ))}
       </div>
-      <div className="text-center mt-12">
-        <button
-          onClick={() => setShowAllProducts(true)}
-          className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
-        >
-          Load More
-        </button>
-      </div>
+      {!showAllProducts && (
+        <div className="mt-12">
+          <button
+            onClick={() => setShowAllProducts(true)}
+            className="text-[#5C6DDE] text-[24px] leading-[36px] font-bold"
+          >
+            Load More
+          </button>
+        </div>
+      )}
     </section>
   );
 };
