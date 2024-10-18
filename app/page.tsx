@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import heroBg from "./hero_bg.svg";
 import vase from "./vase.png";
+import ProductGrid from "./component/product-grid";
 
 const Header = () => (
   <header className="flex justify-between pt-[42px] items-center mx-auto max-w-6xl">
@@ -79,72 +80,6 @@ const Feature = () => (
         alt="Plant"
         className="relative z-10 w-full h-full scale-125 pb-20"
       />
-    </div>
-  </section>
-);
-
-const ProductCard = ({
-  image,
-  title,
-  price,
-}: {
-  image: string;
-  title: string;
-  price: string;
-}) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-    <Image
-      src={image}
-      alt={title}
-      width={300}
-      height={300}
-      className="w-full h-48 object-cover"
-    />
-    <div className="p-4">
-      <h3 className="font-bold mb-2">{title}</h3>
-      <p className="text-gray-600">{price}</p>
-    </div>
-  </div>
-);
-
-const ProductGrid = () => (
-  <section className="py-20 px-4">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <ProductCard
-        image="/placeholder.svg"
-        title="CONSECTETUR ELIT"
-        price="£12.99"
-      />
-      <ProductCard
-        image="/placeholder.svg"
-        title="CONSECTETUR ELIT"
-        price="£12.99"
-      />
-      <ProductCard
-        image="/placeholder.svg"
-        title="CONSECTETUR ELIT"
-        price="£12.99"
-      />
-      <ProductCard
-        image="/placeholder.svg"
-        title="CONSECTETUR ELIT"
-        price="£12.99"
-      />
-      <ProductCard
-        image="/placeholder.svg"
-        title="CONSECTETUR ELIT"
-        price="£12.99"
-      />
-      <ProductCard
-        image="/placeholder.svg"
-        title="CONSECTETUR ELIT"
-        price="£12.99"
-      />
-    </div>
-    <div className="text-center mt-12">
-      <button className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white">
-        Load More
-      </button>
     </div>
   </section>
 );
@@ -249,7 +184,9 @@ const Footer = () => (
   </footer>
 );
 
-export default function Component() {
+export default async function Component() {
+  const products = await getProducts();
+  console.log({ products });
   return (
     <div>
       <Image
@@ -263,9 +200,16 @@ export default function Component() {
       <main>
         <Hero />
         <Feature />
-        <ProductGrid />
+        <ProductGrid products={products} />
       </main>
       <Footer />
     </div>
   );
+}
+
+async function getProducts() {
+  const [res] = await fetch(
+    "https://my-json-server.typicode.com/TomSearle/cb-devtest-api/products"
+  ).then((res) => res.json());
+  return res;
 }
