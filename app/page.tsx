@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import heroBg from "./hero_bg.svg";
 
 const Header = () => (
   <header className="flex justify-between pt-[42px] items-center mx-auto max-w-6xl">
-    <h1 className="text-4xl font-bold">CHILLED GRAPE</h1>
+    <h1 className="text-4xl font-bold text-white">CHILLED GRAPE</h1>
     <div className="flex items-center space-x-24">
       <nav className="hidden md:flex space-x-10">
         <Link
@@ -249,6 +250,13 @@ const Footer = () => (
 export default function Component() {
   return (
     <div>
+      <Image
+        src={heroBg}
+        alt="Hero Background"
+        width={1920}
+        height={1080}
+        className="absolute -top-[150px] left-0 h-full object-cover z-[-1]"
+      />
       <Header />
       <main>
         <Hero />
