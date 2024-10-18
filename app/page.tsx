@@ -59,7 +59,9 @@ const Feature = () => (
   <section className="flex flex-col gap-10  md:flex-row items-center justify-between max-w-6xl mx-auto">
     <div className="md:w-7/12">
       <h2 className="font-poppins mb-[38px] text-4xl font-bold leading-[54px] text-left">
-        LOREM IPSUM DOLOR SIT AMET.
+        LOREM IPSUM DOLOR SIT
+        <br />
+        AMET.
       </h2>
       <p className="font-poppins text-2xl font-normal leading-9 text-left mb-12">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
@@ -75,7 +77,7 @@ const Feature = () => (
       <Image
         src={vase}
         alt="Plant"
-        className="relative z-10 w-full h-full scale-125"
+        className="relative z-10 w-full h-full scale-125 pb-20"
       />
     </div>
   </section>
