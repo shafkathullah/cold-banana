@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => (
-  <header className="flex justify-between items-center p-4 mx-auto max-w-6xl">
+  <header className="flex justify-between pt-[42px] items-center mx-auto max-w-6xl">
     <h1 className="text-4xl font-bold">CHILLED GRAPE</h1>
     <div className="flex items-center space-x-24">
       <nav className="hidden md:flex space-x-10">
@@ -39,14 +39,14 @@ const Header = () => (
 );
 
 const Hero = () => (
-  <section className="text-center py-20">
-    <div className="bg-black bg-opacity-50 py-20">
-      <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+  <section className="h-[800px] flex justify-center items-center">
+    <div className="pr-40">
+      <h2 className="text-[64px] leading-[96px] font-bold text-[#212121]">
         LOREM IPSUM
         <br />
         DOLOR SIT AMET.
       </h2>
-      <button className="bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-2 rounded-full hover:from-green-500 hover:to-blue-600 transition duration-300">
+      <button className="bg-gradient-to-r to-[#5B68DF] from-[#73E0A9] text-white w-[249px] h-[60px] rounded-full hover:opacity-90 transition duration-300 text-[22px] leading-[33px] font-semibold">
         Read More
       </button>
     </div>
